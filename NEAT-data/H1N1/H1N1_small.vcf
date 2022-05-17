@@ -1,0 +1,14 @@
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=WP,Number=1,Type=String,Description="NEAT's genotype">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##fileformat=VCFv4.2
+##reference=file://H1N1.fa
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NA00001
+H1N1_HA	4	.	A	G	.	.	.	GT:DP	0/0:1
+H1N1_HA	6	.	G	A	.	.	AF=1.0	.	.
+H1N1_HA	7	.	G	A	.	.	.	.	.
+H1N1_HA	11	.	T	C	.	.	WP=1/0	.	.
+H1N1_HA	13	.	C	A	.	.	.	GT	1/1
+H1N1_HA	16	.	G	A	.	.	.	.	.
+H1N1_HA	19	.	G	A,T	.	.	.	GT	1/0
+H1N1_HA	20	.	T	G	.	.	.	.	.
