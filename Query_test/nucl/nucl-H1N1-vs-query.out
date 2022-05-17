@@ -1,0 +1,200 @@
+BLASTN 2.9.0+
+
+
+Reference: Zheng Zhang, Scott Schwartz, Lukas Wagner, and Webb
+Miller (2000), "A greedy algorithm for aligning DNA sequences", J
+Comput Biol 2000; 7(1-2):203-14.
+
+
+
+Database: /home/suvinit/blast/db/Query_test/nucl/query.fa
+           1 sequences; 213 total letters
+
+
+
+Query= H1N1_HA
+
+Length=1701
+                                                                      Score        E
+Sequences producing significant alignments:                          (Bits)     Value
+
+H1N1_HA                                                               313        2e-89
+
+
+>H1N1_HA 
+Length=213
+
+ Score = 313 bits (169),  Expect = 2e-89
+ Identities = 199/213 (93%), Gaps = 4/213 (2%)
+ Strand=Plus/Plus
+
+Query  1122  GGGGTCAGGATATGCAGCCGACCTGAAGAGCACACAGAATGCCATTGACGAGATTACTAA  1181
+             |||||||||||||||||||||||| |||||||||||||| ||||||||||||||||||||
+Sbjct  1     GGGGTCAGGATATGCAGCCGACCTAAAGAGCACACAGAAGGCCATTGACGAGATTACTAA  60
+
+Query  1182  CAAAGTAAATTCTGTTATTGAAAAGATGAATACACAGTTCACAGCAGTAGGTAAAGAGTT  1241
+              |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  61    TAAAGTAAATTCTGTTATTGAAAAGATGAATACACAGTTCACAGCAGTAGGTAAAGAGTT  120
+
+Query  1242  CAACCACCTGGAAAAAAGAATAGAGA-ATTTAAATAAAAAAGTTGATGATGGTTTCCTGG  1300
+             ||||||||||||| | |||||||||| | ||||||||||||||||| |||||| ||||| 
+Sbjct  121   CAACCACCTGGAATAGAGAATAGAGAGAGTTAAATAAAAAAGTTGAGGATGGTATCCTGT  180
+
+Query  1301  -ACATTTGGACTTAC--AATGCCGAACTGTTGG  1330
+              |||||||||||||   ||||||||||||||||
+Sbjct  181   TACATTTGGACTTAGTAAATGCCGAACTGTTGG  213
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 339489
+
+
+Query= H1N1_MP
+
+Length=982
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 196142
+
+
+Query= H1N1_NA
+
+Length=1410
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 282598
+
+
+Query= H1N1_NP
+
+Length=1497
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 300172
+
+
+Query= H1N1_NS
+
+Length=838
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 167054
+
+
+Query= H1N1_PA
+
+Length=2151
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 429939
+
+
+Query= H1N1_PB1
+
+Length=2274
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 454662
+
+
+Query= H1N1_PB2
+
+Length=2280
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 455868
+
+
+  Database: /home/suvinit/blast/db/Query_test/nucl/query.fa
+    Posted date:  Dec 1, 2021  11:57 AM
+  Number of letters in database: 213
+  Number of sequences in database:  1
+
+
+
+Matrix: blastn matrix 1 -2
+Gap Penalties: Existence: 0, Extension: 2.5
