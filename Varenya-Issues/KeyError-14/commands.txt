@@ -1,0 +1,37 @@
+python3 gen_reads.py -r /home/suvinit/Varenya-Issues/KeyError-14/test.fasta -R 101 --pe 300 30 -c 20 -m /home/suvinit/Varenya-Issues/KeyError-14/testing.p -o output_tumor
+
+
+
+Traceback (most recent call last):
+  File "gen_reads.py", line 893, in <module>
+    main()
+  File "gen_reads.py", line 196, in main
+    mut_model = parse_input_mutation_model(mut_model, 1)
+  File "/home/suvinit/NEAT/source/SequenceContainer.py", line 1076, in parse_input_mutation_model
+    out_model[0] = pickle_dict['AVG_MUT_RATE']
+TypeError: list indices must be intsudo apt-get update -y && sudo apt-get upgrade -y && uname -sr && python3 --version && neofetchegers or slices, not str
+
+
+-----------------------------------------------------------------------------------------------
+02.02.2022
+python3 gen_reads.py -r /home/suvinit/NEAT-data/H1N1/H1N1.fasta -R 101 --pe 300 30 -c 20 -o /home/suvinit/Varenya-Issues/KeyError-14/h1n1-test-1
+
+-----------------------------------------------------------------------------------------------
+
+python3 gen_reads.py -r /home/suvinit/Varenya-Issues/KeyError-14/ecoli.fa -R 101 --pe 300 30 -c 20 -m /home/suvinit/Varenya-Issues/KeyError-14/ecoli.p -o output_tumor
+
+
+Traceback (most recent call last):
+  File "gen_reads.py", line 893, in <module>
+    main()
+  File "gen_reads.py", line 196, in main
+    mut_model = parse_input_mutation_model(mut_model, 1)
+  File "/home/suvinit/NEAT/source/SequenceContainer.py", line 1075, in parse_input_mutation_model
+    pickle_dict = pickle.load(open(model, "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/suvinit/Varenya-Issues/KeyError-14/ecoli.p'
+
+-----------------------------------------------------------------------------------------------
+02.03.2022
+https://github.com/scastlara/minineedle
+pip install minineedle
+
