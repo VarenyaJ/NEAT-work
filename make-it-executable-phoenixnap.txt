@@ -1,0 +1,107 @@
+https://phoenixnap.com/kb/linux-file-permissions
+
+Check Permissions in Command-Line with Ls Command
+If you prefer using the command line, you can easily find a file’s permission settings with the ls command, used to list information about files/directories. You can also add the –l option to the command to see the information in the long list format.
+To check the permission configuration of a file, use the command:
+
+ls –l [file_name]
+
+For instance, the command for the previously mentioned file would be:
+
+ls –l test.txt
+
+using ls command to check permission with owner and group
+As seen in the image above, the output provides the following information:
+
+file permission
+the owner (creator) of the file
+the group to which that owner belongs to
+the date of creation.
+It shows the permission settings, grouped in a string of characters (-, r, w, x) classified into four sections:
+
+File type. There are three possibilities for the type. It can either be a regular file (–), a directory (d) or a link (i).
+File permission of the user (owner)
+File permission of the owner’s group
+File permission of other users
+file permission syntax explained
+The characters r, w, and x stand for read, write, and execute.
+The categories can have all three privileges, just specific ones, or none at all (represented by  –, for denied).
+
+Users that have reading permission can see the content of a file (or files in a directory). However, they cannot modify it (nor add/remove files in a directory). On the other hand, those who have writing privileges can edit (add and remove) files. Finally, being able to execute means the user can run the file. This option is mainly used for running scripts.
+
+In the previous example, the output showed that test.txt is a regular file with read and write permission assigned to the owner, but gives read-only access to the group and others.
+
+permission settings for file output
+Using Chmod Command to Change File Permissions 
+As all Linux users, you will at some point need to modify the permission settings of a file/directory. The command that executes such tasks is the chmod command.
+
+The basic syntax is:
+
+chmod [permission] [file_name]
+
+There are two ways to define permission:
+
+using symbols (alphanumerical characters)
+using the octal notation method
+Define File Permission with Symbolic Mode
+To specify permission settings using alphanumerical characters, you’ll need to define accessibility for the user/owner (u), group (g), and others (o).
+
+Type the initial letter for each class, followed by the equal sign (=) and the first letter of the read (r), write (w) and/or execute (x) privileges.
+
+To set a file, so it is public for reading, writing, and executing, the command is:
+
+chmod u=rwx,g=rwx,o=rwx [file_name]
+
+To set permission as in the previously mentioned test.txt to be:
+• read and write for the user
+• read for the members of the group
+• read for other users
+
+Use the following command:
+
+chmod u=rw,g=r,o=r test.txt
+
+Note: There is no space between the categories; we only use commas to separate them.
+
+Another way to specify permission is by using the octal/numeric format. This option is faster, as it requires less typing, although it is not as straightforward as the previous method.
+
+Instead of letters, the octal format represents privileges with numbers:
+
+r(ead) has the value of 4
+w(rite) has the value of 2
+(e)x(ecute) has the value of 1
+no permission has the value of 0
+The privileges are summed up and depicted by one number. Therefore, the possibilities are:
+
+7 – for read, write, and execute permission
+6 – for read and write privileges
+5 – for read and execute privileges
+4 – for read privileges
+As you have to define permission for each category (user, group, owner), the command will include three (3) numbers (each representing the summation of privileges).
+
+For instance, let’s look at the test.txt file that we symbolically configured with the chmod u=rw,g=r,o=r test.txtcommand.
+
+The same permission settings can be defined using the octal format with the command:
+
+chmod 644 test.txt
+
+chmod octal numeric format explained
+Define File Permission in Octal/Numeric Mode
+Note: If you need a more in-depth guide on how to use Chmod In Linux to change file permissions recursively, read our Chmod Recursive guide.
+
+Changing User File and Group Ownership
+Aside from changing file permissions, you may come across a situation that requires changing the user file ownership or even group ownership.
+
+Performing either of these tasks requires you first need to switch to superuser privileges. Use one of the options outlined in the previous passage.
+
+To change the file ownership use the chown command:
+
+chown [user_name] [file_name]
+
+Instead of [user_name] type in the name of the user who will be the new owner of the file.
+
+To change the group ownership type in the following command:
+
+chgrp [group_name] [file_name]
+
+Instead of [group_name] type in the name of the group that will be the new owner of the file.

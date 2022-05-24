@@ -1,0 +1,81 @@
+https://askubuntu.com/questions/484718/how-to-make-a-file-executable
+
+Just run:
+
+chmod +x /path/to/your/file.txt
+
+Note that chmod does also have some more advanced options. It accepts three groups of options, represented as --- --- ---. The first set of --- is User. The second is Group and the last is Other (everyone else).
+
+r stands for Read, w for Write and x for eXecute.
+
+To allow everyone to read it, but only Group to execute and User to read and write it would be -rw- rx- r--. This would be added to the command as:
+
+chmod +rw-rx-r-- /path/to/file.extension
+
+chmod also can do this in numbers. It is based on binary.
+
+So there are these numbers:
+
+Execute by user is 100. Execute by group is 010. Execute by other is 001
+
+Write by user is 200. Write by group is 020. Write by other is 002.
+
+Read by user is 400. Read by group is 040. Read by other is 004.
+
+Then you add these together to get the desired combination.
+
+So to allow everyone to read it, but only Group to execute and User to write it would be 400 + 040 + 004 and 010 and 200
+
+That adds up to 600 + 050 + 004 = 654.
+
+You could then run the command.
+
+chmod +654 /path/to/file.extension
+
+to set it. So to set all permissions you can run:
+
+chmod +rwxrwxrwx /path/to/file.extension
+
+or
+
+chmod +777 /path/to/file.extension
+
+Finally, you can do:
+
+chmod -777 /path/to/file.extension
+
+To take all permissions away from everyone.
+
+And:
+
+chmod +300 /path/to/file.extension
+
+To add read and write for the user, without affecting any other permissions (e.g. Execute permissions).
+
+This website has a very useful little tool, whereby you can tick the options you want and it gives you the command:
+
+However, not all the possible combinations are sensible to use; the main ones that are used are the following:
+
+    755 - Owner has all, and Group and Other can read and execute
+
+    700 - Owner has all
+
+    644 - Owner can read and write, and Group and Other can read
+
+    600 - Owner can read and write
+
+And, if you're using non-trivial user groups:
+
+    775 - Owner can read and write, and Group and Other can read
+
+    770 - Owner and Group have all, and Other can read and execute
+
+    750 - Owner has all, and Group can read and execute
+
+    664 - Owner and Group can read and write, and Other can just read
+
+    660 - Owner and Group can read and write
+
+    640 - Owner can read and write, and Group can read
+
+777 and 666 are rarely used, except in /tmp.
