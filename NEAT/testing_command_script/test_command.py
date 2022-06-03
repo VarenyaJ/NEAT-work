@@ -6,7 +6,7 @@ import os.path
 @click.command()
 @click.option('--file_path', required=True, show_default=True, help='Path to reference fasta', type=click.Path(exists=True))
 @click.option('--read_length', required=True, default=100, show_default=True, help='The desired read length') #try to test is < this is within a certain range (50,300)
-@click.option('--output_path', default="H1N1.test-run", show_default=True, help='output_prefix')
+@click.option('--output_path', default="/home/suvinit/NEAT/testing_command_script/H1N1.test-run", show_default=True, help='output_prefix')
 @click.option('--bam', default=False, is_flag=True, show_default=True, help='output golden BAM file')
 ###
 #@click.option('--n', default=1, show_default=True)
@@ -32,6 +32,14 @@ def hello(file_path, read_length, output_path, bam):
 	try:
 		with open('config.txt', 'w') as f:
 			f.write("Created/overwrote a config file")
+			r = file_path
+			R = read_length
+			o = output_path
+			f.write("\n@r = " + f"{r}")
+			f.write("\n@R = " + f"{R}")
+			f.write("\n@o = " + f"{o}")
+			f.write("\n@bam = " + f"{bam}")
+			f.write("\n")
 	except FileNotFoundError:
 			print("The directory does not exist")
 	print("\nHi Josh!")
@@ -40,10 +48,4 @@ def hello(file_path, read_length, output_path, bam):
 if __name__ == '__main__':
 	hello()
 ################################<TASK BELOW>################################
-#create config file
-#append with only user inputs
-#if input DNE then exit with error
-#test with file_path, if none then error exit
-#?
-#	dynamic defaults for prompts?
-#	single option boolean flags?
+#for each variable, writie out @VAR_NAME = VALUE_TO_EXECUTE
