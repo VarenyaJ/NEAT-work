@@ -48,4 +48,7 @@ def hello(file_path, read_length, output_path, bam):
 if __name__ == '__main__':
 	hello()
 ################################<TASK BELOW>################################
-#for each variable, writie out @VAR_NAME = VALUE_TO_EXECUTE
+#When opening config.txt in write-mode
+#Realized that the config file only opens in same directory as script
+#Maybe change that?
+#In progress...

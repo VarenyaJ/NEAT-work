@@ -1,5 +1,10 @@
 import test_command
+#from test_command import file_path
+#from test_command import read_length
+#from test_command import output_path
+
 #from test_command import file_path, read_length, output_path
+
 #import click
 #@click.command()
 #@click.option('--file_path', required=True, show_default=True, help='Path to reference fasta', type=click.Path(exists=True))
@@ -12,14 +17,14 @@ def HelloThereGeneralKenobi():
             print("Does this work? #1\n")
             print("The config file contains the following:\n")
             #to print out the array of all lines with brackets, use:
-            print("readlines:\n")
+            print("\nreadlines makes:\n")
             print(f.readlines())
             f.seek(0)
             #to print out every line use:
-            print("readline:\n")
+            print("\nreadline makes:\n")
             print(f.readline())
             f.seek(0)
-            print("read:\n")
+            print("read makes:\n")
             print(f.read())
             f.seek(0)
             print("And that's all folks!")
@@ -40,3 +45,35 @@ def HelloThereGeneralKenobi():
 
 if __name__ == '__main__':
 	HelloThereGeneralKenobi()
+################################<TASK BELOW>################################
+#Still working on importing variables from test_command.property
+#<python3 readingALPHA.py> still prints this to the terminal:
+'''
+    Does this work? #1
+
+The config file contains the following:
+
+readlines makes:
+
+['Created/overwrote a config file\n', '@r = /home/suvinit/NEAT-data/H1N1/H1N1.fa\n', '@R = 250\n', '@o = /home/suvinit/Desktop/\n', '@bam = False\n']
+readline makes:
+
+Created/overwrote a config file
+
+read makes:
+
+Created/overwrote a config file
+@r = /home/suvinit/NEAT-data/H1N1/H1N1.fa
+@R = 250
+@o = /home/suvinit/Desktop/
+@bam = False
+
+And that's all folks!
+
+Traceback (most recent call last):
+  File "readingALPHA.py", line 47, in <module>
+    HelloThereGeneralKenobi()
+  File "readingALPHA.py", line 34, in HelloThereGeneralKenobi
+    r = file_path
+NameError: name 'file_path' is not defined
+'''
