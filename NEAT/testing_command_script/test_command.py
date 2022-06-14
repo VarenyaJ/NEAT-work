@@ -38,22 +38,42 @@ def read_back_cfg():
 				mylines.append(line)
 			print("\nCheck 2.2\n")
 			for element in mylines:
+				if "@" in mylines:
+				    element=mylines[mylines.find("@")+1:].split()[0]
+				else:
+				    element=element
 				print(element)
-			print("\nCheck 2.3\n")
+				print("\nCheck 2.3\n")
+			print("\nCheck 2.4\n")
 			myfile.seek(0)
 			for line in myfile:
 				print(mylines[0].find(" = "))
-			print("\nCheck 2.4\n")
+			print("\nCheck 2.5\n")
+			myfile.seek(0)
+			print(myfile.readlines())
+			print("\nCheck 2.6\n")
+			myfile.seek(0)
+			count = 0
+			while True:
+				count += 1
+				line = myfile.readline()
+				if not line:
+					break
+				print("Line{}: {}".format(count, line.strip()))
+			print("\nCheck 2.7\n")
 	except FileNotFoundError:
             print("There is a FileNotFoundError\n")
             print("\nHi Josh!")
 
 if __name__ == '__main__':
+	print("\nLet's get this party started\n")
 	gen_config_file()
-	print("\nBah-weep-Graaaaagnah weep ni ni bong\n")
+	print("\nThis is where the fun begins\n")
 	read_back_cfg()
+	print("\nBah-weep-Graaaaagnah weep ni ni bong\n")
 ################################<THOUGHTS BELOW>################################
 #When opening config.txt in write-mode
 #Realized that the config file only opens in same directory as script
 #Maybe change that?
 #In progress...
+

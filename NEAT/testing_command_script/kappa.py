@@ -22,6 +22,18 @@ def read_back_cfg():
 			for line in myfile:
 				print(mylines[0].find(" = "))
 			print("\nCheck 2.5\n")
+			myfile.seek(0)
+			print(myfile.readlines())
+			print("\nCheck 2.6\n")
+			myfile.seek(0)
+			count = 0
+			while True:
+				count += 1
+				line = myfile.readline()
+				if not line:
+					break
+				print("Line{}: {}".format(count, line.strip()))
+			print("\nCheck 2.7\n")
 	except FileNotFoundError:
             print("There is a FileNotFoundError\n")
             print("\nHi Josh!")
@@ -35,3 +47,4 @@ if __name__ == '__main__':
 #Realized that the config file only opens in same directory as script
 #Maybe change that?
 #In progress...
+
