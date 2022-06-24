@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #
 #
 #   compute_gc.py
@@ -11,12 +12,15 @@
 #
 # Updated to Python 3 standards
 
-import time
 import argparse
-import numpy as np
-import pickle
-from Bio import SeqIO
 import gzip
+import pickle
+import time
+import pdb
+
+import numpy as np
+from Bio import SeqIO
+import pybedtools
 
 
 def process_fasta(file: str) -> dict:
@@ -59,12 +63,10 @@ def process_genomecov(file: str, ref_dict: dict, window: int) -> dict:
     current_line = 0
     current_ref = None
     current_cov = 0
-    lines_processed = 0
 
     f = open(file, 'r')
     for line in f:
         splt = line.strip().split('\t')
-        lines_processed += 1
         if current_line == 0:
             current_ref = splt[0]
             current_pos = int(splt[1]) - 1
@@ -110,10 +112,6 @@ def calculate_coverage(bin_dict: dict, window: int) -> float:
             running_total += my_len
             bin_dict[k] = my_mean
 
-    # Prevent a divide by zero error.
-    if float(running_total) == 0:
-        return None
-
     return all_mean / float(running_total)
 
 
@@ -149,11 +147,6 @@ def main():
     print("Calculating average coverage...")
     average_coverage = calculate_coverage(gc_bins, window_size)
 
-    if not average_coverage:
-        print(f"No coverage found in this genomcov file {in_gcb}")
-        print(f'No output produced')
-        return
-
     print('AVERAGE COVERAGE =', average_coverage)
 
     y_out = []
@@ -163,7 +156,6 @@ def main():
 
     print('saving model...')
     pickle.dump([range(window_size + 1), y_out], gzip.open(out_p + ".pickle.gz", 'wb'))
-
     print(time.time() - tt, '(sec)')
 
 

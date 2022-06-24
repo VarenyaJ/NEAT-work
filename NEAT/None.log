@@ -1,0 +1,69 @@
+2022/06/24 13:29 INFO MainThread: NEAT multithreaded version, v4.0, is running.
+2022/06/24 13:29 INFO MainThread: Started: 1656095376.920691.
+2022/06/24 13:29 INFO MainThread: Run Configuration...
+2022/06/24 13:29 INFO MainThread: Producing the following files: fastq
+2022/06/24 13:29 INFO MainThread: Input file: /home/suvinit/NEAT-data/H1N1/H1N1.fa
+2022/06/24 13:29 INFO MainThread: Output files: /home/suvinit/NEAT/command_script.<fastq >
+2022/06/24 13:29 INFO MainThread: Single threading - 1 thread.
+2022/06/24 13:29 INFO MainThread: Running in single-ended mode.
+2022/06/24 13:29 INFO MainThread: Using a read length of 100
+2022/06/24 13:29 INFO MainThread: Average coverage: 10.0
+2022/06/24 13:29 INFO MainThread: Using error model: /home/suvinit/NEAT/models/errorModel_default.pickle.gz
+2022/06/24 13:29 INFO MainThread: Ploidy value: 2
+2022/06/24 13:29 INFO MainThread: Using GC model: /home/suvinit/NEAT/models/gcBias_default.pickle.gz
+2022/06/24 13:29 INFO MainThread: RNG seed value: 8695007825519924
+2022/06/24 13:29 INFO MainThread: Reading Models...
+2022/06/24 13:34 INFO MainThread: NEAT multithreaded version, v4.0, is running.
+2022/06/24 13:34 INFO MainThread: Started: 1656095673.2092037.
+2022/06/24 13:34 INFO MainThread: Run Configuration...
+2022/06/24 13:34 INFO MainThread: Producing the following files: fastq
+2022/06/24 13:34 INFO MainThread: Input file: /home/suvinit/NEAT-data/H1N1/H1N1.fa
+2022/06/24 13:34 INFO MainThread: Output files: /home/suvinit/NEAT/command_script.<fastq >
+2022/06/24 13:34 INFO MainThread: Single threading - 1 thread.
+2022/06/24 13:34 INFO MainThread: Running in single-ended mode.
+2022/06/24 13:34 INFO MainThread: Using a read length of 100
+2022/06/24 13:34 INFO MainThread: Average coverage: 10.0
+2022/06/24 13:34 INFO MainThread: Using error model: /home/suvinit/NEAT/models/errorModel_default.pickle.gz
+2022/06/24 13:34 INFO MainThread: Ploidy value: 2
+2022/06/24 13:34 INFO MainThread: Using GC model: /home/suvinit/NEAT/models/gcBias_default.pickle.gz
+2022/06/24 13:34 INFO MainThread: RNG seed value: 6345160022925116
+2022/06/24 13:34 INFO MainThread: Reading Models...
+2022/06/24 13:35 INFO MainThread: NEAT multithreaded version, v4.0, is running.
+2022/06/24 13:35 INFO MainThread: Started: 1656095724.7309546.
+2022/06/24 13:35 INFO MainThread: Run Configuration...
+2022/06/24 13:35 INFO MainThread: Producing the following files: fastq
+2022/06/24 13:35 INFO MainThread: Input file: /home/suvinit/NEAT-data/H1N1/H1N1.fa
+2022/06/24 13:35 INFO MainThread: Output files: /home/suvinit/NEAT/command_script.<fastq >
+2022/06/24 13:35 INFO MainThread: Single threading - 1 thread.
+2022/06/24 13:35 INFO MainThread: Running in single-ended mode.
+2022/06/24 13:35 INFO MainThread: Using a read length of 100
+2022/06/24 13:35 INFO MainThread: Average coverage: 10.0
+2022/06/24 13:35 INFO MainThread: Using error model: /home/suvinit/NEAT/models/errorModel_default.pickle.gz
+2022/06/24 13:35 INFO MainThread: Ploidy value: 2
+2022/06/24 13:35 INFO MainThread: Using GC model: /home/suvinit/NEAT/models/gcBias_default.pickle.gz
+2022/06/24 13:35 INFO MainThread: RNG seed value: 6227587101051271
+2022/06/24 13:35 INFO MainThread: Reading Models...
+2022/06/24 13:36 INFO MainThread: NEAT multithreaded version, v4.0, is running.
+2022/06/24 13:36 INFO MainThread: Started: 1656095809.332946.
+2022/06/24 13:36 INFO MainThread: Run Configuration...
+2022/06/24 13:36 INFO MainThread: Producing the following files: fastq
+2022/06/24 13:36 INFO MainThread: Input file: /home/suvinit/NEAT-data/H1N1/H1N1.fa
+2022/06/24 13:36 INFO MainThread: Output files: /home/suvinit/NEAT/command_script.<fastq >
+2022/06/24 13:36 INFO MainThread: Single threading - 1 thread.
+2022/06/24 13:36 INFO MainThread: Running in single-ended mode.
+2022/06/24 13:36 INFO MainThread: Using a read length of 100
+2022/06/24 13:36 INFO MainThread: Average coverage: 10.0
+2022/06/24 13:36 INFO MainThread: Using error model: /home/suvinit/NEAT/models/errorModel_default.pickle.gz
+2022/06/24 13:36 INFO MainThread: Ploidy value: 2
+2022/06/24 13:36 INFO MainThread: Using GC model: /home/suvinit/NEAT/models/gcBias_default.pickle.gz
+2022/06/24 13:36 INFO MainThread: RNG seed value: 7834296270420668
+2022/06/24 13:36 INFO MainThread: Reading Models...
+2022/06/24 15:22 INFO MainThread: NEAT multithreaded version, v4.0, is running.
+2022/06/24 15:22 INFO MainThread: Started: 1656102176.6420386.
+2022/06/24 15:22 ERROR MainThread: The file given to @error_model does not exist
+2022/06/24 15:43 INFO MainThread: NEAT multithreaded version, v4.0, is running.
+2022/06/24 15:43 INFO MainThread: Started: 1656103419.0217516.
+2022/06/24 15:43 ERROR MainThread: The file given to @error_model does not exist
+2022/06/24 15:44 INFO MainThread: NEAT multithreaded version, v4.0, is running.
+2022/06/24 15:44 INFO MainThread: Started: 1656103458.1390345.
+2022/06/24 15:44 ERROR MainThread: The file given to @error_model does not exist

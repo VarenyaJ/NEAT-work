@@ -1,15 +1,13 @@
 #!/usr/bin/env source
 
-import gen_reads
+import gen_reads_parallel
 import argparse
-import random
 import pathlib
 import gzip
 import shutil
 import sys
 import copy
 from time import time
-# from Bio import SeqIO
 
 
 class Bacterium:
@@ -46,7 +44,7 @@ class Bacterium:
         :return: None
         """
         args = ['-r', str(self.reference), '-R', '101', '-o', self.name, '--fa', '-c', '1']
-        gen_reads.main(args)
+        gen_reads_parallel.main(args)
         self.file = pathlib.Path().absolute() / (self.name + ".fasta.gz")
 
         # The following workaround is due to the fact that genReads cannot handle gzipped
@@ -59,7 +57,7 @@ class Bacterium:
 
         # Now we further have to fix the fasta file, which outputs in a form that doesn't make much sense,
         # so that it can be properly analyzed in the next generation by genreads.
-        temp_name_list = self.chrom[:]
+        temp_name_list = copy.deepcopy(self.chroms)
         temp_file = self.file.parents[0] / 'neat_temporary_fasta_file.fa'
         temp_file.touch()
         chromosome_name = ""
@@ -78,7 +76,6 @@ class Bacterium:
                             else:
                                 continue
                     if not chromosome_name:
-                        print(sys.exc_info()[2])
                         print("Something went wrong with the generated fasta file.\n")
                         sys.exit(1)
                 else:
@@ -98,7 +95,7 @@ class Bacterium:
         args = ['-r', str(self.file), '-M', '0', '-R', '101', '-o', self.name,
                 '-c', str(coverage_value), '--pe', str(fragment_size), str(fragment_std), '--vcf', '--bam']
 
-        gen_reads.main(args)
+        gen_reads_parallel.main(args)
 
     def remove(self):
         """
@@ -134,7 +131,7 @@ def cull(population: list, percentage: float = 0.5) -> list:
     cull_amount = round(len(population) * percentage)
     print("Culling {} members from population".format(cull_amount))
     for _ in range(cull_amount):
-        selection = random.choice(population)
+        selection = rng.choice(population)
         population.remove(selection)
         selection.remove()
     return population
@@ -198,14 +195,15 @@ def extract_names(reference: str) -> list:
     ref_names = []
     absolute_reference_path = pathlib.Path(reference)
     if absolute_reference_path.suffix == '.gz':
-        ref = gzip.open(absolute_reference_path, 'r')
+        with gzip.open(absolute_reference_path, 'rt') as ref:
+            for line in ref:
+                if line.startswith(">"):
+                    ref_names.append(line[1:].rstrip())
     else:
-        ref = open(absolute_reference_path, 'r')
-
-    for line in ref:
-        if line.startswith(">"):
-            ref_names.append(line[1:].rstrip())
-
+        with open(absolute_reference_path, 'r') as ref:
+            for line in ref:
+                if line.startswith(">"):
+                    ref_names.append(line[1:].rstrip())
     if not ref_names:
         print("Malformed fasta file. Missing properly formatted chromosome names.\n")
         sys.exit(1)
@@ -233,6 +231,7 @@ def main():
 
     (ref_fasta, init_population_size, generations) = (args.r, args.i, args.g)
     cull_percentage = args.k
+    # Need to add a numpy rng generator and redo how this is run.
     coverage = args.c
     (fragment_size, fragment_std) = args.pe
 

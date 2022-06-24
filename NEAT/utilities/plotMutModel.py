@@ -7,26 +7,27 @@
 #
 # Python 3 ready
 
-import sys
-import pickle
-import bisect
-import numpy as np
-import matplotlib.pyplot as mpl
-import matplotlib.colors as colors
-import matplotlib.cm as cmx
 import argparse
+import bisect
 import gzip
+import pickle
+
+import matplotlib.cm as cmx
+import matplotlib.colors as colors
+import matplotlib.pyplot as mpl
+import numpy as np
 
 # mpl.rc('text',usetex=True)
 # mpl.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
 
 parser = argparse.ArgumentParser(description='Plot and compare mutation models from gen_mut_model.py Usage: '
-                                             'python plotMutModel.py -i model1.p [model2.p] [model3.p]... '
+                                             'python plotMutModel.py -i model1.pickle.gz [model2.pickle.gz] '
+                                             '[model3.pickle.gz]... '
                                              '-l legend_label1 [legend_label2] [legend_label3]... '
                                              '-o path/to/pdf_plot_prefix',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter,)
 parser.add_argument('-i', type=str, required=True, metavar='<str>', nargs='+',
-                    help="* mutation_model_1.p [mutation_model_2.p] [mutation_model_3] ...")
+                    help="* mutation_model_1.pickle.gz [mutation_model_2.pickle.gz] [mutation_model_3] ...")
 parser.add_argument('-l', type=str, required=True, metavar='<str>', nargs='+',
                     help="* legend labels: model1_name [model2_name] [model3_name]...")
 parser.add_argument('-o', type=str, required=True, metavar='<str>', help="* output pdf prefix")

@@ -6,22 +6,21 @@
 #          Computes sequencing error model for gen_reads.py
 #
 #         
-#          Usage: python genSeqErrorModel.py -i input_reads.fq -o path/to/output_name.p
+#          Usage: python genSeqErrorModel.py -i input_reads.fq -o path/to/output_name
 #
 #
 # Python 3 ready
 
-# Testing Git
-
-import numpy as np
 import argparse
-import sys
-import pickle
-import matplotlib.pyplot as mpl
-import pathlib
-import pysam
-from functools import reduce
 import gzip
+import pathlib
+import pickle
+import sys
+from functools import reduce
+
+import matplotlib.pyplot as mpl
+import numpy as np
+import pysam
 
 # enables import from neighboring package
 sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))
@@ -36,7 +35,7 @@ def parse_file(input_file, real_q, off_q, max_reads, n_samp, plot_stuff):
     prob_smooth = 0.
 
     # Takes a gzip or sam file and returns the simulation's average error rate,
-    print('reading ' + input_file + '...')
+    print(f'reading {input_file}...')
     is_aligned = False
     lines_to_read = 0
     try:
@@ -87,6 +86,8 @@ def parse_file(input_file, real_q, off_q, max_reads, n_samp, plot_stuff):
             q = qualities_to_check[i]
             q_dict[q] = True
             prev_q = q
+            if 0 < qualities_to_check[i] <= 6:
+                prior_q[s][0] += 1
             if i == 0:
                 prior_q[i][q] += 1
             else:
@@ -201,15 +202,15 @@ def parse_file(input_file, real_q, off_q, max_reads, n_samp, plot_stuff):
     # print (len(init_q), len(init_q[0]))
     # print (len(prob_q), len(prob_q[1]), len(prob_q[1][0]))
 
-    init_dist_by_pos = [DiscreteDistribution(init_q[i], q_scores) for i in range(len(init_q))]
+    init_dist_by_pos = [DiscreteDistribution(q_scores, init_q[i]) for i in range(len(init_q))]
     prob_dist_by_pos_by_prev_q = [None]
     for i in range(1, len(init_q)):
         prob_dist_by_pos_by_prev_q.append([])
         for j in range(len(init_q[0])):
             if np.sum(prob_q[i][j]) <= 0.:  # if we don't have sufficient data for a transition, use the previous qscore
-                prob_dist_by_pos_by_prev_q[-1].append(DiscreteDistribution([1], [q_scores[j]], degenerate_val=q_scores[j]))
+                prob_dist_by_pos_by_prev_q[-1].append(DiscreteDistribution([q_scores[j]], [1], degenerate_val=q_scores[j]))
             else:
-                prob_dist_by_pos_by_prev_q[-1].append(DiscreteDistribution(prob_q[i][j], q_scores))
+                prob_dist_by_pos_by_prev_q[-1].append(DiscreteDistribution(q_scores, prob_q[i][j]))
 
     count_dict = {}
     for q in q_scores:
@@ -240,11 +241,12 @@ def main():
     parser = argparse.ArgumentParser(description='genSeqErrorModel.py')
     parser.add_argument('-i', type=str, required=True, metavar='<str>', help="* input_read1.fq (.gz) / input_read1.sam")
     parser.add_argument('-o', type=str, required=True, metavar='<str>', help="/output/prefix")
-    parser.add_argument('-i2', type=str, required=False, metavar='<str>', default=None,
-                        help="input_read2.fq (.gz)")
-    parser.add_argument('-p', type=str, required=False, metavar='<str>', default=None, help="input_alignment.pileup")
-    parser.add_argument('-q', type=int, required=False, metavar='<int>', default=33, help="quality score offset [33]")
-    parser.add_argument('-Q', type=int, required=False, metavar='<int>', default=41, help="maximum quality score [41]")
+    # TODO take a vcf based on the above reads and caluclate the error metrics
+    # parser.add_argument('-i2', type=str, required=False, metavar='<str>', default=None,
+    #                     help="input_read2.fq (.gz)")
+    # parser.add_argument('-p', type=str, required=False, metavar='<str>', default=None, help="input_alignment.pileup")
+    # parser.add_argument('-q', type=int, required=False, metavar='<int>', default=33, help="quality score offset [33]")
+    parser.add_argument('-Q', type=int, required=False, metavar='<int>', default=[0, 12, 24, 36], help="list of quality score bins [0, 12, 24, 36]")
     parser.add_argument('-n', type=int, required=False, metavar='<int>', default=-1,
                         help="maximum number of reads to process [all]")
     parser.add_argument('-s', type=int, required=False, metavar='<int>', default=1000000,
@@ -271,7 +273,7 @@ def main():
     #
     #	embed some default sequencing error parameters if no pileup is provided
     #
-    if pile_up == None:
+    if not pile_up:
 
         print('Using default sequencing error parameters...')
 
@@ -305,10 +307,16 @@ def main():
     outfile = pathlib.Path(outfile).with_suffix(".pickle.gz")
     print('saving model...')
     if infile2 is None:
+        # pickle.dump({"quality_scores": qual_scores, "quality_score_probabilities": q_score_probs, "quality_offset": 33, "average_error": 0.001, "error_parameters": [something...]})
+        # {"quality_scores": [0, 10, 24, 36], "quality_score_probabilities": DataFrame([0.02, 0.11, 0.23, 0.64]),
+        #  "quality_offset": 33, "average_error": 0.001, "error_parameters": [something...]}
         pickle.dump([init_q, prob_q, q_scores, off_q, avg_err, err_params], gzip.open(outfile, 'wb'))
     else:
         pickle.dump([init_q, prob_q, init_q2, prob_q2, q_scores, off_q, avg_err, err_params], gzip.open(outfile, 'wb'))
 
+k = {'whatever': 3, 'something_else': [4,5,6]}
+
+print(k['whatever'])
 
 if __name__ == '__main__':
     main()
