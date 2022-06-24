@@ -35,7 +35,7 @@ def HelloThereGeneralKenobi():
             print("\nCheck 5\n")
             myfile.seek(0)
             for line in myfile:
-                print(mylines[0].find" = ")
+                print(mylines[0].find(" = "))
         print("\nCheck 6\n")
                 #
             #
@@ -50,3 +50,4 @@ if __name__ == '__main__':
     print("Check 0\n")
     HelloThereGeneralKenobi()
     #print("Bah-weep-Graaaaagnah wheep ni ni bong")
+

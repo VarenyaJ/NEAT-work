@@ -76,4 +76,3 @@ if __name__ == '__main__':
 #Realized that the config file only opens in same directory as script
 #Maybe change that?
 #In progress...
-
