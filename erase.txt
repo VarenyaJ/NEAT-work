@@ -1,1 +1,0 @@
-cd && clear && history -c && history -w && history -c && history -w && history -c && clear
