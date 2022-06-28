@@ -612,5 +612,44 @@ git push
 ################
 06.28.2022
 <>:{
+  cd /home/suvinit
+  rm -rf NEAT
+  git clone git@github.com:ncsa/NEAT.git
+  cd NEAT
+  git checkout feature/modularization
+  git checkout -b modular/command_script
+  ls
+  history
+  git status
+  git add *
+  git commit m "added some command_script files"
+  git commit -m "added some command_script files"
+  git push --set-upstream origin modular/command_script
+  history
+  cd NEAT-work/
+  git branch -a
+  git checkout -b command_script
+  ls
+  clear
+  git status
+  git add *
+  git commit -m "adding command_script files"
+  git push
+  #
+  cd /home/suvinit
+  rm -rf NEAT-work
+  git clone git@github.com:VarenyaJ/NEAT-work.git
+  cd NEAT-work
+  git fetch
+  git checkout -b modular/command_script
+  #manually add files
+  git status
+  git add -A
+  git commit -m "added some modularization files"
+  git push --set-upstream origin modular/command_script
+
+
+
+
 
 }
