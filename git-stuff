@@ -612,35 +612,5 @@ git push
 ################
 06.28.2022
 <>:{
-  git add None.log
-  git commit -m "Adding Log file"
-  git push
-  cd ..
-  cp -r /home/suvinit/NEAT /home/suvinit/Neat-command-script
-  cd /home/suvinit/NEAT
-  git fetch
-  git checkout feature/modularization
-  git checkout -b modular/command_script
-  ls
-  git status
-  clear
-  history
-  cd /home/suvinit
-  rm -rf NEAT
-  git clone git@github.com:ncsa/NEAT.git
-  cd NEAT
-  git checkout command_script
-  #add old files graphically
-  git add -A
-  git commit -m "re-adding files as of 06/24/2022"
-  git push
-  git branch -a
-  git checkout -b modular/command_script
-  git status
-  touch update-day.txt
-  vim update-day.txt
-  git add -A
-  git commit -m "created new branch off of feature/modularization"
-  git push --set-upstream origin modular/command_script
-  history
+
 }
