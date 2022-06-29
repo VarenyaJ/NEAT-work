@@ -647,9 +647,33 @@ git push
   git add -A
   git commit -m "added some modularization files"
   git push --set-upstream origin modular/command_script
-
-
-
+  git config http.postBuffer 524288000
+  cat ~/.ssh/config
+  #edit manually
+  touch sequential-git_push.sh
+  vim sequential-git_push.sh
+  cp sequential-git_push.sh local-push-split.sh
+  chmod +x local-push-split.sh
+  cp local-push-split.sh /home/suvinit/Desktop/
+  git push origin main --force
+  git config http.postBuffer 524288000
+  git push origin main --force
+  #git garbage collection
+  git gc
+  git gc --aggressive
+  git config http.postBuffer 2147483648
+  git push origin main --force
+  git status
+  git add * && git commit -m "Adding old BLAST files"
+  git push
+  git config http.postBuffer 1048576000
+  git config http.lowSpeedLimit 0
+  git config http.lowSpeedTime 999999
+  cat .git/config
+  git status
+  git push origin main --force
+  git add sequential-git_push.sh && git commit -m "scipt to possibly split git pushes and packs into smaller chunks. Since <pack.packSizeLimit> does not affect pushes, only repacking, this may or may not work"
+  #
 
 
 }
