@@ -682,6 +682,11 @@ git push
   cd /home/suvinit && rm -rf NEAT-work && git clone git@github.com:VarenyaJ/NEAT-work.git && cd /home/suvinit/NEAT-work
   git commit -m "Adding some Modular refactored files for NEAT. Also adding a scipt to possibly split git pushes and packs into smaller chunks. Since <pack.packSizeLimit> does not affect pushes, only repacking, this may or may not work."
   git push
+  cd /home/suvinit/NEAT-work/
+  cp /home/suvinit/Desktop/git-stuff /home/suvinit/NEAT-work/
+  git add git-stuff
+  git commit -m "adding some git commands I used"
+  git push
   #
 
 
