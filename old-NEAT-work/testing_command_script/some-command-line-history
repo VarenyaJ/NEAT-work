@@ -1,0 +1,146 @@
+    1  history -w
+    2  clear
+    3  exit
+    4  history
+    5  cd && sudo apt install git libasound2 libcurl4 libgbm1 libgcrypt20 libgtk-3-0 libnotify4 libnss3 libglib2.0-bin xdg-utils libx11-xcb1 libxcb-dri3-0 libxss1 libxtst6 libxkbfile1 && cd /home/suvinit/Downloads && tar xf atom-amd64.tar.gz && atom
+    6  atom
+    7  cd
+    8  cat /home/suvinit/Desktop/update-thingies.sh 
+    9  cd && sudo apt-get update -y && sudo apt-get upgrade -y && uname -sr && python3 --version && neofetch
+   10  touch test_click.py
+   11  python3 test_click.py 
+   12  touch test_command.py
+   13  python3 test_command.py 
+   14  python3 cli-test.py 
+   15  python3 cli-test.py hello
+   16  history
+   17  clear
+   18  cd && sudo apt-get update -y && sudo apt-get upgrade -y && uname -sr && python3 --version && neofetch && sudo apt install snapd && sudo snap install atom --classic
+   19  cd
+   20  cd NEAT
+   21  git branch 
+   22  mv /home/suvinit/Desktop/cli-test.py /home/suvinit/NEAT
+   23  mv /home/suvinit/Desktop/test_click.py /home/suvinit/NEAT
+   24  mv /home/suvinit/Desktop/test_command.py /home/suvinit/NEAT
+   25  git add cli-test.py 
+   26  git add test_click.py 
+   27  git add test_command.py 
+   28  git push
+   29  cd && sudo apt-get update -y && sudo apt-get upgrade -y && uname -sr && python3 --version && neofetch
+   30  git branch
+   31  git branch master 
+   32  git checkout master 
+   33  git pull
+   34  git checkout command_script 
+   35  git pull
+   36  python3 test_click.py 
+   37  python3 cli-test.py 
+   38  python3 test_command.py 
+   39  pwd
+   40  /home/suvinit/blast
+   41  python3 Desktop/parts-command_script.py 
+   42  pwd
+   43  python3 /home/suvinit/Desktop/parts-command_script.py 
+   44  python3 /home/suvinit/Desktop/cli-test.py 
+   45  python3 /home/suvinit/Desktop/test_command.py 
+   46  cd /home/suvinit/Desktop/ && ./update-thingies.sh && cd
+   47  clear
+   48  cd /home/suvinit/NEAT
+   49  clear
+   50  cd /home/suvinit/NEAT-data/
+   51  ls
+   52  ls H1N1/
+   53  pwd
+   54  cd ..
+   55  pwd
+   56  cd .. && pwd
+   57  ls
+   58  cd && sudo apt-get update -y && sudo apt-get upgrade -y && uname -sr && python3 --version && neofetch
+   59  cd NEAT
+   60  python3 constant-click-test.py 
+   61  pwd
+   62  ls ..
+   63  python3 constant-click-test.py 
+   64  clear
+   65  python3 constant-click-test.py 
+   66  python3 2constant-click-test.py 
+   67  python3
+   68  clear
+   69  pwd
+   70  clear
+   71  pwd && ls
+   72  python3 test_click.py 
+   73  python3 test_command.py 
+   74  python3 constant-click-test.py 
+   75  python3 test_click.py 
+   76  python3 constant-click-test.py 
+   77  python3 cli-test.py 
+   78  cd && xrandr --output Virtual1 --mode 1920x1080
+   79  cd /home/suvinit/Desktop/ && ./updatethingies.sh && cd /home/suvinit/NEAT && clear && pwd && ls
+   80  cd /home/suvinit/Desktop/ && ./update-thingies.sh && cd /home/suvinit/NEAT && clear && pwd && ls
+   81  python3 test_command.py 
+   82  python3 test_click.py 
+   83  python3 test_command.py 
+   84  python3 test_command.py --file_path h1n1.fake.bed
+   85  python3 test_command.py --file_path /home/suvinit/NEAT-data/H1N1/h1n1.fake.bed
+   86  python3 test_command.py --file_path /home/suvinit/NEAT-data/H1N2
+   87  python3 test_command.py --output_path /home/suvinit/NEAT-data/H1N2
+   88  git branch
+   89  git add test_command.py 
+   90  git commit -m "foundation for using three flags"
+   91  git config user.name "VarenyaJ"
+   92  git config user.email "varenyajj@gmail.com"
+   93  git add test_command.py 
+   94  git commit -m "foundation for using three flags"
+   95  git checkout 
+   96  git status
+   97  git push
+   98  git config user.email "varenyajj@gmail.com"
+   99  clear
+  100  cd && sudo apt-get update -y && sudo apt-get upgrade -y && uname -sr && python3 --version && neofetch
+  101  cd /home/suvinit/NEAT/testing_command_script/
+  102  python3 test_command.py 
+  103  python3 random-trial-click-test.py 
+  104  python3 random-trial-click-test.py --help
+  105  python3 random-trial-click-test.py --gr True
+  106  python3 random-trial-click-test.py --gr TRUE
+  107  python3 random-trial-click-test.py --help
+  108  clear
+  109  python3 random-trial-click-test.py --help
+  110  python3 random-trial-click-test.py --n 14
+  111  python3 random-trial-click-test.py --n 14 --gr
+  112  python3 random-trial-click-test.py --n 14 --br
+  113  python3 random-trial-click-test.py --n 14 --gr
+  114  python3 random-trial-click-test.py --n 14
+  115  python3 random-trial-click-test.py
+  116  python3 random-trial-click-test.py --n 14
+  117  python3 random-trial-click-test.py
+  118  python3 test_command.py 
+  119  python3 random-trial-click-test.py
+  120  python3 2test_command.py 
+  121  python3 test_command.py 
+  122  python3 2test_command.py 
+  123  python3 random-trial-click-test.py 
+  124  python3 random-trial-click-test.py -help
+  125  python3 random-trial-click-test.py --help
+  126  python3 random-trial-click-test.py --gr
+  127  python3 random-trial-click-test.py --br
+  128  python3 random-trial-click-test.py --gr TRUE
+  129  python3 random-trial-click-test.py --br FALSE
+  130  python3 random-trial-click-test.py --n 14
+  131  python3 random-trial-click-test.py -gr
+  132  python3 random-trial-click-test.py --gr
+  133  python3 random-trial-click-test.py --br
+  134  python3 random-trial-click-test.py --br --n 14
+  135  python3 random-trial-click-test.py --gr --n 14
+  136  python3 2test_command.py 
+  137  python3 2test_command.py --help
+  138  python3 2test_command.py --bam
+  139  python3 test_command.py 
+  140  python3 test_command.py --br
+  141  python3 test_command.py --gr
+  142  python3 test_command.py --gr --n 14
+  143  python3 test_command.py --gr --bam
+  144  python3 test_command.py
+  145  python3 test_command.py --bam
+  146  history
