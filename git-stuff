@@ -749,7 +749,16 @@ git push
   neat read_simulator_cli
   neat read_simulator_cli -help
   neat read_simulator_cli --help
-  #
+  conda config --set auto_activate_base false
+  #Add <conda deactivate> to the end of ~/.bashrc
+  clear && git status && git fetch && git branch && git add neat/cli/commands/read_simulator_cli.py neat.cfg && git commit -m "trying to fix environment again" && git push
+  clear && cd /home/suvinit/NEAT-work && git status && git branch -a
+  clear && git checkout modular/command_script && git status && ls neat/cli/commands/
+  cp /home/suvinit/NEAT/neat/cli/commands/read_simulator_cli.py /home/suvinit/NEAT-work/neat/cli/commands/
+  cp /home/suvinit/NEAT/neat.cfg /home/suvinit/NEAT-work/neat.cfg
+  clear && git status && git add neat/cli/commands/read_simulator_cli.py neat.cfg && git commit -m "trying to fix environment again" && git push
+  clear && cd /home/suvinit/NEAT-work && git checkout main && cp /home/suvinit/Desktop/git-stuff /home/suvinit/NEAT-work/
+  clear && git status && git add git-stuff && git commit -m "adding some git commands I used" && git push
   #
 }
 ################
