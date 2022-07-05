@@ -3,22 +3,12 @@ Command line interface for NEAT's generate reads function, with
 """
 
 import argparse
-
-#attempted relative import with no known parent package
-#from ...read_simulator import read_simulator_runner
 import sys
 sys.path.insert(0, '/home/suvinit/NEAT/neat/read_simulator')
-from runner import read_simulator_runner
-
 from .base import BaseCommand
 from .options import output_group
-
-#imports from command_script>epsilon.py
 import os
-from input_checking import check_file_open
 import pathlib
-import gen_reads_parallel
-from gen_reads_parallel import *
 
 
 class Command(BaseCommand):
@@ -40,12 +30,11 @@ class Command(BaseCommand):
 
         :param parser: The parser to add arguments to.
         """
+        #Parse Flags from NEAT's gen_reads.py
         parser = argparse.ArgumentParser(description = "Operational Flags for NEAT v3.2 subprogram 'gen_reads'", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-        parser.add_argument('--r', type=str, required=True, metavar='reference', help="Path to reference fasta")
-        parser.add_argument('--R', type=int, required=True, metavar='read_length', help="The desired read length (ideally between 100 and 300)")
-        parser.add_argument('--o', type=str, required=True, metavar='output_prefix', help="Use this option to specify where and what to call output files")
+        parser.add_argument('-r', type=str, required=True, metavar='reference', help="Path to reference fasta")
+        parser.add_argument('-R', type=int, required=True, metavar='read_length', help="The desired read length (ideally between 100 and 300)")
         parser.add_argument('--bam', required=False, action='store_true', default=False, help="output golden BAM file")
-        #06.24.2022: Bring in all the other original flags from GR
         parser.add_argument('-c', type=float, required=False, metavar='coverage', default=10.0, help="Average coverage, default is 10.0")
         parser.add_argument('-e', type=str, required=False, metavar='error_model', default=None, help="Location of the file for the sequencing error model (omit to use the default)")
         parser.add_argument('-E', type=float, required=False, metavar='Error rate', default=-1, help="Rescale avg sequencing error rate to this, must be between 0.0 and 0.3")
@@ -69,16 +58,21 @@ class Command(BaseCommand):
         #parser.add_argument('--discard-offtarget', required=False, action='store_true', default=False, help='discard reads outside of targeted regions')
         #parser.add_argument('--force-coverage', required=False, action='store_true', default=False, help='[debug] ignore fancy models, force coverage to be constant')
         #parser.add_argument('--rescale-qual', required=False, action='store_true', default=False, help='Rescale quality scores to match -E input')
-        args = parser.parse_args(raw_args)
-        #Check that reference file is real:
-        check_file_open(args.r, 'Error: could not open reference {}'.format(args.r), required=True)
+        output_group.add_to_parser(parser)
         print("Check 1\n")
-        r = args.r
-        R = args.R
-        o = args.o
-        print("r is " + f"{r}" + "\n")
-        print("R is " + f"{R}" + "\n")
-        print("o is " + f"{o}" + "\n")
+        #//
+        #Argument Parsing:
+        #
+
+
+    def execute(self, args: argparse.Namespace):
+        """
+        Execute the command.
+
+        :param arguments: The namespace with arguments and their values.
+        """
+        #Argument Parsing:
+        args=parser.parse_args(raw_agrs)
         #Write arguments to a cfg file
         try:
             with open('neat.cfg', 'w') as f:
@@ -116,17 +110,7 @@ class Command(BaseCommand):
         except FileNotFoundError:
                 print("The directory does not exist")
         print("Check 1.1\n")
-        return(o)
+        #
 
 
-
-        output_group.add_to_parser(parser)
-
-    def execute(self, arguments: argparse.Namespace):
-        """
-        Execute the command.
-
-        :param arguments: The namespace with arguments and their values.
-        """
-
-        read_simulator_runner(arguments.config, arguments.output)
+        read_simulator_runner('neat.cfg', args.output)
