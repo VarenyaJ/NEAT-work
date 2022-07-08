@@ -760,5 +760,21 @@ git push
   clear && cd /home/suvinit/NEAT-work && git checkout main && cp /home/suvinit/Desktop/git-stuff /home/suvinit/NEAT-work/
   clear && git status && git add git-stuff && git commit -m "adding some git commands I used" && git push
   #
+  conda deactivate && conda env remove -n neat && rm -rf /home/suvinit/miniconda3/envs/neat && rm -rf /home/suvinit/miniconda3/envs/neat && cd
+  cd && rm -rf NEAT && git clone git@github.com:ncsa/NEAT.git && cd /home/suvinit/NEAT
+  git checkout modular/command_script
+  #
+  #git add * && git commit -m "Adding Josh's edits" && git push
+  #
+  conda env create -f dev-environment.yml -n neat
+  conda activate neat
+  poetry install
+  neat --help
+  neat read_simulator_cli --help
+  rm neat.cfg && clear && neat read_simulator_cli -r /home/suvinit/NEAT-data/H1N1/H1N1.fa -R 150 -o /home/suvinit/NEAT/
+  #
+  #
+  #
 }
 ################
+
