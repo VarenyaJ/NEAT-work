@@ -484,11 +484,17 @@ class GcModel:
     :param gc_bias: The coverage bias at each GC-count for the window size
     """
     def __init__(self,
-                 window_size: int,
-                 gc_bias: np.ndarray[float, ...]):
+                 window_size: int = None,
+                 gc_bias: np.ndarray[float, ...] = None):
         # assign the model attributes.
         self.window_size = window_size
         self.gc_bias = gc_bias
+        if not self.window_size:
+            # 50 was the default used in the original computeGC.py function.
+            self.window_size = 50
+        if not self.gc_bias:
+            # We'll set them all equal by default, i.e., no bias
+            self.gc_bias = np.ones(50)
 
     def create_coverage_bias_vector(self, sequence: Seq) -> np.ndarray[float, ...]:
         """
@@ -514,14 +520,16 @@ class FragmentLengthModel:
     :param fragment_min: the smallest fragment observed in data
     """
     def __init__(self,
-                 fragment_mean: float,
-                 fragment_std: float,
-                 fragment_max: int,
-                 fragment_min: int):
+                 fragment_mean: float = None,
+                 fragment_std: float = None,
+                 fragment_max: int = None,
+                 fragment_min: int = None):
         self.fragment_mean = fragment_mean
         self.fragment_st_dev = fragment_std
         self.fragment_max = fragment_max
         self.fragment_min = fragment_min
+        # If there was no input model, we'll select some defaults
+
 
     def generate_fragments(self,
                            count: int) -> np.ndarray[int, ...]:

@@ -1,5 +1,5 @@
 """
-Runner for generate_reads task
+Runner for read_simulator task
 """
 
 import logging

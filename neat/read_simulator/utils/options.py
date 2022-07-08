@@ -40,12 +40,9 @@ class Options(SimpleNamespace):
     """
     def __init__(self,
                  output_path: str | Path,
-                 config_file: str | Path = None,
-                 reference: str | Path = None,
-                 read_len: int = None, paired_ended: bool = False):
+                 config_file: str | Path):
         SimpleNamespace.__init__(self)
 
-        self.is_quickrun = True if config_file else False
         self.defs = {}
         self.config_file = config_file
 
@@ -111,14 +108,9 @@ class Options(SimpleNamespace):
         self.cancer_model = None
         self.cancer_purity = 0.8
 
-        if not self.is_quickrun:
-            # Read the config file
-            self.args = {}
-            self.read()
-        else:
-            self.args['reference'] = reference
-            self.args['read_len'] = read_len
-            self.args['paired_ended'] = paired_ended
+        # Read the config file
+        self.args = {}
+        self.read()
 
         # Anything remaining is set to default:
         for key, (_, default, criteria1, criteria2) in self.defs.items():

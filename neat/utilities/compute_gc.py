@@ -92,7 +92,7 @@ def process_genomecov(file: str, ref_dict: dict, window: int) -> dict:
 def calculate_coverage(bin_dict: dict, window: int) -> float:
     """
     Takes the dictionary created in process_genomecov and finds the average coverage value.
-    Also ouputs the average coverage value for each window, along with the number of entries in that window.
+    Also, ouputs the average coverage value for each window, along with the number of entries in that window.
     :param bin_dict: dictionary created from using the process_genomecov function
     :param window: Length of each section of base pairs to count, 
                    should be the same as the window value in process_genomecov

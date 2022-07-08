@@ -1,7 +1,0 @@
-2022-07-01 13:38:34,038:ERROR:neat:read_simulator_cli failed, see the traceback below
-Traceback (most recent call last):
-  File "/home/suvinit/miniconda3/envs/neat/lib/python3.10/site-packages/neat/cli/cli.py", line 126, in main
-    cmd(args)
-  File "/home/suvinit/miniconda3/envs/neat/lib/python3.10/site-packages/neat/cli/commands/read_simulator_cli.py", line 42, in execute
-    read_simulator_runner(arguments.config, arguments.output)
-AttributeError: 'Namespace' object has no attribute 'config'
