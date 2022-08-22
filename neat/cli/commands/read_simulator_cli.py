@@ -88,7 +88,11 @@ class Command(BaseCommand):
         with open('2neat.cfg', 'w') as file:
             documents = yaml.dump(test_dict, file)
         #
-
+        with open('/home/suvinit/NEAT/config_template/simple_template.yml', 'r') as file:
+            template_dict = yaml.safe_load(file)
+            with open ('filled-template.yaml', 'w') as outfile:
+                yaml.dump(test_dict, outfile)
+#
 
         #read_simulator_runner(arguments.config, arguments.output)
         read_simulator_runner("neat.cfg", arguments.output)

@@ -1,0 +1,64 @@
+2022-08-22 14:23:41,999:INFO:neat.read_simulator.runner:Using configuration file neat.cfg
+2022-08-22 14:23:42,000:INFO:neat.read_simulator.runner:Saving output files to /home/suvinit
+2022-08-22 14:23:42,005:INFO:neat.read_simulator.utils.options:Run Configuration...
+2022-08-22 14:23:42,005:INFO:neat.read_simulator.utils.options:Input fasta: /home/suvinit/NEAT-data/H1N1/H1N1.fa
+2022-08-22 14:23:42,005:INFO:neat.read_simulator.utils.options:Output files: /home/suvinit/NEAT-work.fastq
+2022-08-22 14:23:42,005:INFO:neat.read_simulator.utils.options:Single threading - 1 thread.
+2022-08-22 14:23:42,005:INFO:neat.read_simulator.utils.options:Running in single-ended mode.
+2022-08-22 14:23:42,005:INFO:neat.read_simulator.utils.options:Using a read length of 150
+2022-08-22 14:23:42,006:INFO:neat.read_simulator.utils.options:Average coverage: 10.0
+2022-08-22 14:23:42,006:INFO:neat.read_simulator.utils.options:Using default error model.
+2022-08-22 14:23:42,006:INFO:neat.read_simulator.utils.options:Ploidy value: 2
+2022-08-22 14:23:42,006:INFO:neat.read_simulator.utils.options:RNG seed value for run: 6139894830412205
+2022-08-22 14:23:42,006:INFO:neat.read_simulator.runner:Reading Models...
+2022-08-22 14:23:42,007:INFO:neat.read_simulator.runner:Reading /home/suvinit/NEAT-data/H1N1/H1N1.fa.
+2022-08-22 14:23:42,009:INFO:neat.read_simulator.runner:Beginning simulation.
+2022-08-22 14:23:42,010:INFO:neat.read_simulator.runner:Generating variants for H1N1_HA
+2022-08-22 14:23:42,010:INFO:neat.read_simulator.runner:Creating trinucleotide map for H1N1_HA...
+2022-08-22 14:23:42,383:INFO:neat.read_simulator.utils.output_variants:Finished generating random mutations in 0.01 minutes
+2022-08-22 14:23:42,383:INFO:neat.read_simulator.utils.output_variants:Added 503 mutations to H1N1_HA
+2022-08-22 14:23:42,383:INFO:neat.read_simulator.utils.output_variants:Outputting temp vcf for H1N1_HA for later use
+2022-08-22 14:23:42,385:INFO:neat.read_simulator.utils.output_variants:Finished outputting temp vcf in 0.00 minutes
+2022-08-22 14:23:42,386:INFO:neat.read_simulator.runner:Generating variants for H1N1_MP
+2022-08-22 14:23:42,386:INFO:neat.read_simulator.runner:Creating trinucleotide map for H1N1_MP...
+2022-08-22 14:23:42,541:INFO:neat.read_simulator.utils.output_variants:Finished generating random mutations in 0.00 minutes
+2022-08-22 14:23:42,541:INFO:neat.read_simulator.utils.output_variants:Added 293 mutations to H1N1_MP
+2022-08-22 14:23:42,541:INFO:neat.read_simulator.utils.output_variants:Outputting temp vcf for H1N1_MP for later use
+2022-08-22 14:23:42,543:INFO:neat.read_simulator.utils.output_variants:Finished outputting temp vcf in 0.00 minutes
+2022-08-22 14:23:42,543:INFO:neat.read_simulator.runner:Generating variants for H1N1_NA
+2022-08-22 14:23:42,543:INFO:neat.read_simulator.runner:Creating trinucleotide map for H1N1_NA...
+2022-08-22 14:23:42,853:INFO:neat.read_simulator.utils.output_variants:Finished generating random mutations in 0.00 minutes
+2022-08-22 14:23:42,853:INFO:neat.read_simulator.utils.output_variants:Added 422 mutations to H1N1_NA
+2022-08-22 14:23:42,853:INFO:neat.read_simulator.utils.output_variants:Outputting temp vcf for H1N1_NA for later use
+2022-08-22 14:23:42,855:INFO:neat.read_simulator.utils.output_variants:Finished outputting temp vcf in 0.00 minutes
+2022-08-22 14:23:42,856:INFO:neat.read_simulator.runner:Generating variants for H1N1_NP
+2022-08-22 14:23:42,856:INFO:neat.read_simulator.runner:Creating trinucleotide map for H1N1_NP...
+2022-08-22 14:23:43,151:INFO:neat.read_simulator.utils.output_variants:Finished generating random mutations in 0.00 minutes
+2022-08-22 14:23:43,151:INFO:neat.read_simulator.utils.output_variants:Added 446 mutations to H1N1_NP
+2022-08-22 14:23:43,151:INFO:neat.read_simulator.utils.output_variants:Outputting temp vcf for H1N1_NP for later use
+2022-08-22 14:23:43,154:INFO:neat.read_simulator.utils.output_variants:Finished outputting temp vcf in 0.00 minutes
+2022-08-22 14:23:43,154:INFO:neat.read_simulator.runner:Generating variants for H1N1_NS
+2022-08-22 14:23:43,154:INFO:neat.read_simulator.runner:Creating trinucleotide map for H1N1_NS...
+2022-08-22 14:23:43,298:INFO:neat.read_simulator.utils.output_variants:Finished generating random mutations in 0.00 minutes
+2022-08-22 14:23:43,299:INFO:neat.read_simulator.utils.output_variants:Added 250 mutations to H1N1_NS
+2022-08-22 14:23:43,299:INFO:neat.read_simulator.utils.output_variants:Outputting temp vcf for H1N1_NS for later use
+2022-08-22 14:23:43,300:INFO:neat.read_simulator.utils.output_variants:Finished outputting temp vcf in 0.00 minutes
+2022-08-22 14:23:43,300:INFO:neat.read_simulator.runner:Generating variants for H1N1_PA
+2022-08-22 14:23:43,300:INFO:neat.read_simulator.runner:Creating trinucleotide map for H1N1_PA...
+2022-08-22 14:23:43,715:INFO:neat.read_simulator.utils.output_variants:Finished generating random mutations in 0.01 minutes
+2022-08-22 14:23:43,716:INFO:neat.read_simulator.utils.output_variants:Added 643 mutations to H1N1_PA
+2022-08-22 14:23:43,716:INFO:neat.read_simulator.utils.output_variants:Outputting temp vcf for H1N1_PA for later use
+2022-08-22 14:23:43,719:INFO:neat.read_simulator.utils.output_variants:Finished outputting temp vcf in 0.00 minutes
+2022-08-22 14:23:43,719:INFO:neat.read_simulator.runner:Generating variants for H1N1_PB1
+2022-08-22 14:23:43,720:INFO:neat.read_simulator.runner:Creating trinucleotide map for H1N1_PB1...
+2022-08-22 14:23:44,151:INFO:neat.read_simulator.utils.output_variants:Finished generating random mutations in 0.01 minutes
+2022-08-22 14:23:44,151:INFO:neat.read_simulator.utils.output_variants:Added 675 mutations to H1N1_PB1
+2022-08-22 14:23:44,151:INFO:neat.read_simulator.utils.output_variants:Outputting temp vcf for H1N1_PB1 for later use
+2022-08-22 14:23:44,155:INFO:neat.read_simulator.utils.output_variants:Finished outputting temp vcf in 0.00 minutes
+2022-08-22 14:23:44,155:INFO:neat.read_simulator.runner:Generating variants for H1N1_PB2
+2022-08-22 14:23:44,155:INFO:neat.read_simulator.runner:Creating trinucleotide map for H1N1_PB2...
+2022-08-22 14:23:44,610:INFO:neat.read_simulator.utils.output_variants:Finished generating random mutations in 0.01 minutes
+2022-08-22 14:23:44,611:INFO:neat.read_simulator.utils.output_variants:Added 683 mutations to H1N1_PB2
+2022-08-22 14:23:44,611:INFO:neat.read_simulator.utils.output_variants:Outputting temp vcf for H1N1_PB2 for later use
+2022-08-22 14:23:44,616:INFO:neat.read_simulator.utils.output_variants:Finished outputting temp vcf in 0.00 minutes
+2022-08-22 14:23:44,618:INFO:neat:command finished successfully; execution took 2.647 sec
